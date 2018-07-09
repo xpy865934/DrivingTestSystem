@@ -74,7 +74,14 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
-            'vue': 'vue/dist/vue.esm.js'
+            'vue': 'vue/dist/vue.esm.js',
+            'jquery':'jquery/dist/jquery.min'
         }
-    }
+    },
+    plugins:[
+        new webpack.ProvidePlugin({
+            jquery:"jquery",
+            $:"jquery"
+        })
+    ]
 };
